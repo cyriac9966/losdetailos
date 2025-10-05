@@ -69,7 +69,7 @@ export default function App() {
         <section id="rezervace" className="container-page py-12 sm:py-16">
           <h2 className="text-2xl sm:text-3xl font-bold text-white">Rezervace</h2>
           <p className="text-white/70 mt-2">
-            Zarezervuj si termín online. (Vlož sem svůj Calendly/rezervační widget.)
+            Zarezervuj si termín online. (Vložit rezervační widget.)
           </p>
           {/* <div
           className="calendly-inline-widget mt-6"
