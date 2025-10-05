@@ -1,4 +1,4 @@
-
+cat > src/App.jsx <<'EOF'
 import React from "react";
 import Topbar from "./components/Topbar.jsx";
 import Packages from "./components/Packages.jsx";
@@ -81,3 +81,4 @@ export default function App() {
       </div>
   );
 }
+EOF
