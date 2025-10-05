@@ -5,23 +5,21 @@ import Packages from "./components/Packages.jsx";
 export default function App() {
   return (
       <div className="bg-neutral-950 min-h-screen">
-        <Topbar />
+        <Topbar/>
         {/* offset = výška topbaru (76px) */}
-        <div className="h-[76px]" />
+        <div className="h-[76px]"/>
 
         {/* Hero / Úvod */}
-        <section className="container-page py-10 sm:py-16">
+        <section className="container-page py-10 sm:py-16 text-white">
           <div className="grid gap-6 md:grid-cols-2">
             <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-white">
+              <h1 className="text-3xl sm:text-4xl font-bold">
                 Los Detailos – mobilní ruční mytí & čištění interiérů
               </h1>
               <p className="text-white/80 mt-3">
-                Přijedeme za vámi po Praze a Středočeském kraji. Rychle, šetrně a
-                precizně.
+                Přijedeme za vámi po Praze a Středočeském kraji. Rychle, šetrně a precizně.
               </p>
 
-              {/* Bullet body – tečky v barvě loga */}
               <ul className="mt-5 list-disc marker:text-brandYellow pl-5 space-y-1.5">
                 <li>Příjezd až k vám</li>
                 <li>Hloubkové čištění interiéru</li>
@@ -45,27 +43,27 @@ export default function App() {
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h3 className="text-white font-semibold">Rychlá informace</h3>
+              <h3 className="font-semibold">Rychlá informace</h3>
               <p className="text-white/70 mt-2 text-sm">
-                Čistíme osobní vozy, SUV i lehká užitková. Práce probíhá šetrně,
-                s důrazem na detaily.
+                Čistíme osobní vozy, SUV i lehká užitková. Práce probíhá šetrně, s důrazem na detaily.
               </p>
               <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
                 <div className="rounded-xl border border-white/10 p-4">
                   <div className="text-white/60">Dostupnost</div>
-                  <div className="text-white font-semibold">Praha + Středočesko</div>
+                  <div className="font-semibold">Praha + Středočesko</div>
                 </div>
                 <div className="rounded-xl border border-white/10 p-4">
                   <div className="text-white/60">Platba</div>
-                  <div className="text-white font-semibold">Hotově / převodem</div>
+                  <div className="font-semibold">Hotově / převodem</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+
         {/* Programy / Ceník */}
-        <Packages />
+        <Packages/>
 
         {/* Rezervace – vlož sem svůj rezervační widget (Calendly apod.) */}
         <section id="rezervace" className="container-page py-12 sm:py-16">
