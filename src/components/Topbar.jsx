@@ -22,12 +22,6 @@ export default function Topbar() {
                 {/* Navigace uprostřed */}
                 <nav className="hidden sm:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
                     <a
-                        href="#sluzby"
-                        className="text-black hover:text-black/70 text-base font-semibold transition"
-                    >
-                        Služby
-                    </a>
-                    <a
                         href="#cenik"
                         className="text-black hover:text-black/70 text-base font-semibold transition"
                     >
@@ -38,6 +32,12 @@ export default function Topbar() {
                         className="text-black hover:text-black/70 text-base font-semibold transition"
                     >
                         Rezervace
+                    </a>
+                    <a
+                        href="#kontakt"
+                        className="text-black hover:text-black/70 text-base font-semibold transition"
+                    >
+                        Kontakt
                     </a>
                 </nav>
 
