@@ -77,6 +77,15 @@ export default function App() {
           style={{ minWidth: "320px", height: "720px" }}
         /> */}
         </section>
+        <section id="kontakt" className="container-page py-16">
+          <h2 className="text-2xl sm:text-3xl font-bold">Kontakt</h2>
+          <p className="text-black/70 mt-2 leading-relaxed">
+            📍 <strong>Vykáň 138, okres Kolín</strong><br/>
+            📞 +420 777 123 456<br/>
+            📧 info@losdetailos.cz
+          </p>
+        </section>
+
 
         <footer className="border-t border-white/10">
           <div className="container-page py-8 text-white/60 text-sm">
