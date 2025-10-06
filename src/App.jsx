@@ -71,6 +71,15 @@ export default function App() {
             Zarezervuj si termín online. (Vlož sem svůj Calendly/rezervační widget.)
           </p>
         </section>
+        <section id="kontakt" className="container-page py-16">
+          <h2 className="text-2xl sm:text-3xl font-bold">Kontakt</h2>
+          <p className="text-black/70 mt-2 leading-relaxed">
+            📍 <strong>Vykáň 138, okres Kolín</strong><br/>
+            📞 +420 777 123 456<br/>
+            📧 info@losdetailos.cz
+          </p>
+        </section>
+
 
         {/* Footer */}
         <footer className="border-t border-white/10">
