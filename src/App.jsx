@@ -97,7 +97,7 @@ function App() {
           <h2 className="text-2xl sm:text-3xl font-bold">Kontakt</h2>
           <p className="text-white/80 mt-2 leading-relaxed">
             📍 Vykáň 138, okres Kolín <br />
-            📞 +420 777 123 456 <br />
+            📞 +420 720 456 839 <br />
             📧 info@losdetailos.cz
           </p>
         </section>
