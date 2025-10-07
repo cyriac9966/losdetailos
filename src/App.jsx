@@ -57,20 +57,23 @@ function Topbar() {
 
 function App() {
   return (
-      <div className="min-h-screen bg-white text-black">
+      <div
+          className="min-h-screen text-black"
+          style={{ backgroundColor: "rgb(230,160,40)" }}
+      >
         <Topbar />
         <div className="h-[80px]" /> {/* mezera pod topbarem */}
 
         {/* Úvodní sekce */}
         <section className="container-page pt-8 sm:pt-12 pb-10 sm:pb-16">
-          <h1 className="text-3xl sm:text-4xl font-bold">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white">
             Los Detailos – mobilní ruční mytí & čištění interiérů
           </h1>
-          <p className="text-black/70 mt-3">
+          <p className="text-white/80 mt-3">
             Přijedeme za vámi po Praze a Středočeském kraji. Rychle, šetrně a
             precizně.
           </p>
-          <ul className="mt-5 list-disc marker:text-[rgb(253,188,70)] pl-5 space-y-1.5">
+          <ul className="mt-5 list-disc marker:text-[rgb(253,188,70)] pl-5 space-y-1.5 text-white">
             <li>Příjezd až k vám</li>
             <li>Hloubkové čištění interiéru</li>
             <li>Možnost zvýhodněných flotilových cen</li>
@@ -78,21 +81,21 @@ function App() {
         </section>
 
         {/* Sekce Ceník */}
-        <section id="cenik" className="container-page py-12">
+        <section id="cenik" className="container-page py-12 text-white">
           <h2 className="text-2xl sm:text-3xl font-bold">Ceník</h2>
-          <p className="text-black/70 mt-2">Přehled programů a doplňků…</p>
+          <p className="text-white/80 mt-2">Přehled programů a doplňků…</p>
         </section>
 
         {/* Sekce Rezervace */}
-        <section id="rezervace" className="container-page py-12">
+        <section id="rezervace" className="container-page py-12 text-white">
           <h2 className="text-2xl sm:text-3xl font-bold">Rezervace</h2>
-          <p className="text-black/70 mt-2">Zarezervuj si termín online…</p>
+          <p className="text-white/80 mt-2">Zarezervuj si termín online…</p>
         </section>
 
         {/* Sekce Kontakt */}
-        <section id="kontakt" className="container-page py-12">
+        <section id="kontakt" className="container-page py-12 text-white">
           <h2 className="text-2xl sm:text-3xl font-bold">Kontakt</h2>
-          <p className="text-black/70 mt-2 leading-relaxed">
+          <p className="text-white/80 mt-2 leading-relaxed">
             📍 Vykáň 138, okres Kolín <br />
             📞 +420 777 123 456 <br />
             📧 info@losdetailos.cz
@@ -100,8 +103,8 @@ function App() {
         </section>
 
         {/* Patička */}
-        <footer className="border-t border-black/10">
-          <div className="container-page py-8 text-black/60 text-sm">
+        <footer className="border-t border-black/10 bg-black/10">
+          <div className="container-page py-8 text-white/80 text-sm">
             © {new Date().getFullYear()} Los Detailos
           </div>
         </footer>
