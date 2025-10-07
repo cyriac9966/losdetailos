@@ -1,115 +1,86 @@
 import React from "react";
+import Topbar from "./components/Topbar.jsx";
+import Hero from "./components/Hero.jsx";
+import Programs from "./components/Programs.jsx";
 
-function Topbar() {
-  return (
-      <header
-          className="fixed top-0 inset-x-0 z-50 border-b border-black/10 shadow-md h-[80px]"
-          style={{ backgroundColor: "rgb(253,188,70)" }}
-      >
-        <div className="container-page h-full flex items-center justify-between relative">
-          {/* Logo vlevo */}
-          <a href="/" className="flex items-center gap-3 group">
-            <img
-                src="/favicon.png"
-                alt="Los Detailos"
-                className="h-12 w-12 rounded-md"
-            />
-            <span className="text-black font-semibold tracking-wide text-lg group-hover:opacity-80 transition">
-            Los Detailos
-          </span>
-          </a>
+export default function App() {
+    return (
+        <div className="min-h-screen text-black" style={{ backgroundColor: "rgb(253,188,70)" }}>
+            <Topbar />
+            <div className="h-[80px]" /> {/* mezera pod pevnou lištou */}
 
-          {/* Navigace uprostřed */}
-          <nav className="hidden sm:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
-            <a
-                href="#cenik"
-                className="text-black hover:text-black/70 text-base font-semibold transition"
-            >
-              Ceník
-            </a>
-            <a
-                href="#rezervace"
-                className="text-black hover:text-black/70 text-base font-semibold transition"
-            >
-              Rezervace
-            </a>
-            <a
-                href="#kontakt"
-                className="text-black hover:text-black/70 text-base font-semibold transition"
-            >
-              Kontakt
-            </a>
-          </nav>
+            <Hero />
+            <Programs />
 
-          {/* Tlačítko vpravo */}
-          <div className="hidden sm:flex">
-            <a
-                href="#rezervace"
-                className="inline-flex items-center rounded-xl px-5 py-2.5 bg-black text-white font-medium hover:brightness-125 transition"
-            >
-              Objednat
-            </a>
-          </div>
+            {/* Rezervace */}
+            <section id="rezervace" className="container-page py-14">
+                <h2 className="text-2xl sm:text-3xl font-bold">Rezervace</h2>
+                <p className="mt-2 text-black/80">
+                    Vyber program a pošli nám rychlou poptávku. Termín potvrdíme obratem.
+                </p>
+
+                <form
+                    className="mt-6 grid sm:grid-cols-2 gap-4"
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        const form = e.currentTarget;
+                        const program = form.program.value;
+                        const jmeno = form.jmeno.value.trim();
+                        const telefon = form.telefon.value.trim();
+                        const datum = form.datum.value;
+                        const cas = form.cas.value;
+                        const poznamka = form.poznamka.value.trim();
+
+                        const msg =
+                            `Dobrý den, mám zájem o program: ${program}.
+Termín: ${datum || "—"} ${cas || ""}
+Jméno: ${jmeno || "—"}
+Telefon: ${telefon || "—"}${poznamka ? `\nPoznámka: ${poznamka}` : ""}`;
+
+                        const url = `https://wa.me/420720456839?text=${encodeURIComponent(msg)}`;
+                        window.open(url, "_blank");
+                    }}
+                >
+                    <select name="program" className="rounded-lg px-4 py-3 border border-black/20 bg-white/80" defaultValue="Komplet CLASSIC">
+                        <option>Exteriér BASIC</option>
+                        <option>Interiér BASIC</option>
+                        <option>Komplet CLASSIC</option>
+                        <option>Premium DETAIL</option>
+                        <option>Showroom FINISH</option>
+                    </select>
+
+                    <input name="jmeno" placeholder="Jméno a příjmení" className="rounded-lg px-4 py-3 border border-black/20 bg-white/80" required />
+                    <input name="telefon" placeholder="Telefon" className="rounded-lg px-4 py-3 border border-black/20 bg-white/80" />
+                    <div className="grid grid-cols-2 gap-4">
+                        <input type="date" name="datum" className="rounded-lg px-4 py-3 border border-black/20 bg-white/80" />
+                        <input type="time" name="cas" className="rounded-lg px-4 py-3 border border-black/20 bg-white/80" />
+                    </div>
+                    <textarea name="poznamka" placeholder="Poznámka (volitelné)" className="rounded-lg px-4 py-3 sm:col-span-2 border border-black/20 bg-white/80" />
+                    <button
+                        type="submit"
+                        className="sm:col-span-2 rounded-xl px-6 py-3 font-semibold transition"
+                        style={{ backgroundColor: "black", color: "rgb(253,188,70)" }}
+                    >
+                        Odeslat přes WhatsApp
+                    </button>
+                </form>
+            </section>
+
+            {/* Kontakt */}
+            <section id="kontakt" className="container-page py-14">
+                <h2 className="text-2xl sm:text-3xl font-bold">Kontakt</h2>
+                <p className="text-black/90 mt-2 leading-relaxed">
+                    📍 Vykáň 138, okres Kolín<br/>
+                    📞 <a className="underline" href="tel:+420720456839">720 456 839</a><br/>
+                    📧 info@losdetailos.cz
+                </p>
+            </section>
+
+            <footer className="border-t border-black/20">
+                <div className="container-page py-8 text-black/70 text-sm">
+                    © {new Date().getFullYear()} Los Detailos
+                </div>
+            </footer>
         </div>
-      </header>
-  );
+    );
 }
-
-function App() {
-  return (
-      <div
-          className="min-h-screen text-black"
-          style={{ backgroundColor: "rgb(230,160,40)" }}
-      >
-        <Topbar />
-        <div className="h-[80px]" /> {/* mezera pod topbarem */}
-
-        {/* Úvodní sekce */}
-        <section className="container-page pt-8 sm:pt-12 pb-10 sm:pb-16">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white">
-            Los Detailos – mobilní ruční mytí & čištění interiérů
-          </h1>
-          <p className="text-white/80 mt-3">
-            Přijedeme za vámi po Praze a Středočeském kraji. Rychle, šetrně a
-            precizně.
-          </p>
-          <ul className="mt-5 list-disc marker:text-[rgb(253,188,70)] pl-5 space-y-1.5 text-white">
-            <li>Příjezd až k vám</li>
-            <li>Hloubkové čištění interiéru</li>
-            <li>Možnost zvýhodněných flotilových cen</li>
-          </ul>
-        </section>
-
-        {/* Sekce Ceník */}
-        <section id="cenik" className="container-page py-12 text-white">
-          <h2 className="text-2xl sm:text-3xl font-bold">Ceník</h2>
-          <p className="text-white/80 mt-2">Přehled programů a doplňků…</p>
-        </section>
-
-        {/* Sekce Rezervace */}
-        <section id="rezervace" className="container-page py-12 text-white">
-          <h2 className="text-2xl sm:text-3xl font-bold">Rezervace</h2>
-          <p className="text-white/80 mt-2">Zarezervuj si termín online…</p>
-        </section>
-
-        {/* Sekce Kontakt */}
-        <section id="kontakt" className="container-page py-12 text-white">
-          <h2 className="text-2xl sm:text-3xl font-bold">Kontakt</h2>
-          <p className="text-white/80 mt-2 leading-relaxed">
-            📍 Vykáň 138, okres Kolín <br />
-            📞 +420 720 456 839 <br />
-            📧 info@losdetailos.cz
-          </p>
-        </section>
-
-        {/* Patička */}
-        <footer className="border-t border-black/10 bg-black/10">
-          <div className="container-page py-8 text-white/80 text-sm">
-            © {new Date().getFullYear()} Los Detailos
-          </div>
-        </footer>
-      </div>
-  );
-}
-
-export default App;
