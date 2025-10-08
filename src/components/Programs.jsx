@@ -83,11 +83,7 @@ export default function Programs() {
     ];
 
     return (
-        <section
-            id="programy"
-            className="py-16"
-            style={{ backgroundColor: BRAND, color: "black" }}
-        >
+        <section id="programy" className="py-16" style={{ backgroundColor: BRAND, color: "black" }}>
             <div className="container-page">
                 <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 text-black">
                     Ceník a programy
@@ -95,14 +91,8 @@ export default function Programs() {
 
                 <div className="grid gap-8 sm:grid-cols-2">
                     {programs.map((p) => (
-                        <div
-                            key={p.id}
-                            className="rounded-2xl p-6 shadow-lg border border-black/30 bg-black"
-                        >
-                            <h3
-                                className="text-2xl font-semibold mb-1"
-                                style={{ color: BRAND }}
-                            >
+                        <div key={p.id} className="rounded-2xl p-6 shadow-lg border border-black/30 bg-black">
+                            <h3 className="text-2xl font-semibold mb-1" style={{ color: BRAND }}>
                                 {p.title}
                             </h3>
                             <p className="text-sm text-white/80">{p.price}</p>
@@ -123,15 +113,11 @@ export default function Programs() {
                                 </ul>
                             )}
 
-                            {/* tlačítko pod detaily */}
                             <div className="mt-5">
                                 <a
                                     href="#rezervace"
                                     className="inline-block rounded-xl px-5 py-2 font-semibold transition"
-                                    style={{
-                                        backgroundColor: BRAND,
-                                        color: "#000",
-                                    }}
+                                    style={{ backgroundColor: BRAND, color: "#000" }}
                                 >
                                     Objednat
                                 </a>
@@ -153,9 +139,17 @@ export default function Programs() {
                         <li>Odstranění asfaltu / dehtu: 300–700 Kč</li>
                         <li>Leštění skel: 390 Kč</li>
                     </ul>
+
+                    {/* upravené odstavce – POZOR na celé className řetězce */}
                     <p className="text-sm text-white/70 mt-3">
-                        Ceny „od“ platí pro osobní vozy. SUV/dodávky +10–15 %. Další
-                        lokality po domluvě.
+                        Oblast: Praha a Středočeský kraj • další lokality po domluvě.
+                    </p>
+                    <p className="text-sm text-white/70 mt-1">
+                        Pokud nemáte k dispozici vodu, elektřinu nebo vhodný prostor pro čištění,
+                        nabízíme službu <strong>vyzvednutí vašeho vozu na zvolené adrese a jeho
+                        navrácení zpět po dokončení detailingu</strong>. Váš vůz si převezmeme,
+                        postaráme se o kompletní čištění v našem zázemí a doručíme ho zpět čistý a
+                        voňavý – bez starostí.
                     </p>
                 </div>
             </div>
